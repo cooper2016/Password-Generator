@@ -1,6 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//Function to return a random number
+function randomNum(x,y){
+  return Math.floor(Math.random()*(y-x)+x)
+}
+
+// Return a random item from list
+function randomFromList(list){
+  return list[randomNum(0, list.length)]
+} 
 
 function generatePassword(){
   var length = prompt("How many characters would you like in your password?");
