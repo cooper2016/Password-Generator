@@ -17,6 +17,20 @@ function generatePassword(){
   //Convert length string to number
   length = Number(length);
 
+  //Check to see if length is 
+  if(length < 8 || length > 128 ){
+    alert("Password must be between 8 and 128");
+    return;
+  }
+
+  //Check to see if input is a number
+
+  if(isNaN(length)){
+    alert("Not a Number");
+    return;
+  } 
+
+
   //Ask for character types
   var uppers = confirm("Would you like uppercase letters in your password?");
   var lowers = confirm("Would you like lowercase letter in your password?");
@@ -47,7 +61,7 @@ function generatePassword(){
   if (nums){
     userChoice.push(numbers);
   }
-  if (special) {
+  if (spec) {
     userChoice.push(special);
   }
 
@@ -55,15 +69,19 @@ function generatePassword(){
 
   var genPassword = "";
 
-  for (var i = 0; i < passwordLength; i++){
-    var ranPassword = randomItemFromList(userChoice);
-    var ranCharacter = randomItemFromList(ranPassword);
+  for (var i = 0; i < length; i++){
+    var ranPassword = randomFromList(userChoice);
+    var ranCharacter = randomFromList(ranPassword);
     genPassword += ranCharacter;
   }
-   
+  
+  
+
+  //Returns our password
+
   return genPassword;
 
-
+ 
 }
 
 
