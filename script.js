@@ -51,9 +51,17 @@ function generatePassword(){
     userChoice.push(special);
   }
 
+  //Generate Password
 
+  var genPassword = "";
 
-
+  for (var i = 0; i < passwordLength; i++){
+    var ranPassword = randomItemFromList(userChoice);
+    var ranCharacter = randomItemFromList(ranPassword);
+    genPassword += ranCharacter;
+  }
+   
+  return genPassword;
 
 
 }
