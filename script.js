@@ -20,14 +20,14 @@ function generatePassword(){
   //Check to see if length is 
   if(length < 8 || length > 128 ){
     alert("Password must be between 8 and 128");
-    return;
+    return "";
   }
 
   //Check to see if input is a number
 
   if(isNaN(length)){
     alert("Not a Number");
-    return;
+    return "";
   } 
 
 
@@ -39,7 +39,7 @@ function generatePassword(){
 
   //Check to make sure they have selected one char type
   if(uppers == false && lowers == false && nums == false && spec == false){
-    return;
+    return "";
   } 
 
   //Arrays of character types
